@@ -1,0 +1,7 @@
+{
+  "jade-violet": {"label":"QSA green / purple (default)","canvas":"#ffffff","text":"#213047","muted":"#69788c","line":"#cbd4df","frame":"#e5eaf1","base":"#f1f4f8","local":"#218c85","global":"#615ced","third":"#b9781f","fourth":"#367fc1"},
+  "ocean": {"label":"Navy / teal","canvas":"#ffffff","text":"#182d42","muted":"#62758a","line":"#cbd7e2","frame":"#e6edf2","base":"#f2f6fa","local":"#2769ac","global":"#168782","third":"#9566b5","fourth":"#ba791e"},
+  "amber-indigo": {"label":"Amber / indigo","canvas":"#fffefa","text":"#282c40","muted":"#767283","line":"#d9d5df","frame":"#eee9ef","base":"#f6f3f7","local":"#b36d12","global":"#6350ad","third":"#287f75","fourth":"#bd5073"},
+  "accessible": {"label":"Blue / vermillion","canvas":"#ffffff","text":"#202d3b","muted":"#647384","line":"#cdd6df","frame":"#e7edf2","base":"#f2f5f8","local":"#0072b2","global":"#bf4d00","third":"#008060","fourth":"#9b568b"},
+  "monochrome": {"label":"Graphite / slate (also use dashed global)","canvas":"#ffffff","text":"#20262e","muted":"#64707c","line":"#cbd0d7","frame":"#e7e9ed","base":"#f2f3f5","local":"#334155","global":"#64748b","third":"#474750","fourth":"#77746e"}
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture Explainer"
+  short_description: "Source-backed diagrams with three levels of detail"
+  default_prompt: "Use $architecture-explainer to create an architecture diagram at the appropriate detail level."

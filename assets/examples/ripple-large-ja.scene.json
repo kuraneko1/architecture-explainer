@@ -1,0 +1,2724 @@
+{
+  "canvas": [
+    2720,
+    3040
+  ],
+  "nodes": [
+    {
+      "id": "text",
+      "box": [
+        150,
+        210,
+        310,
+        65
+      ],
+      "label": "テキスト",
+      "role": "neutral",
+      "fontsize": 23
+    },
+    {
+      "id": "emb",
+      "box": [
+        150,
+        335,
+        310,
+        80
+      ],
+      "label": "トークン埋め込み",
+      "role": "neutral",
+      "fontsize": 23,
+      "sublabel": "× √5,120 → E0"
+    },
+    {
+      "id": "layer0",
+      "box": [
+        165,
+        570,
+        280,
+        82
+      ],
+      "label": "局所注意",
+      "role": "neutral",
+      "fontsize": 23,
+      "sublabel": "FFN"
+    },
+    {
+      "id": "layer1",
+      "box": [
+        165,
+        680,
+        280,
+        82
+      ],
+      "label": "局所注意",
+      "role": "neutral",
+      "fontsize": 23,
+      "sublabel": "FFN"
+    },
+    {
+      "id": "layer2",
+      "box": [
+        165,
+        790,
+        280,
+        82
+      ],
+      "label": "局所注意",
+      "role": "neutral",
+      "fontsize": 23,
+      "sublabel": "FFN"
+    },
+    {
+      "id": "layer3",
+      "box": [
+        165,
+        900,
+        280,
+        82
+      ],
+      "label": "局所注意",
+      "role": "neutral",
+      "fontsize": 23,
+      "sublabel": "FFN"
+    },
+    {
+      "id": "layer4",
+      "box": [
+        165,
+        1010,
+        280,
+        82
+      ],
+      "label": "全域注意",
+      "role": "global",
+      "fontsize": 23,
+      "sublabel": "FFN"
+    },
+    {
+      "id": "final",
+      "box": [
+        150,
+        1300,
+        310,
+        65
+      ],
+      "label": "最終 RMSNorm",
+      "role": "neutral",
+      "fontsize": 23
+    },
+    {
+      "id": "head",
+      "box": [
+        150,
+        1430,
+        310,
+        80
+      ],
+      "label": "非共有 LM head",
+      "role": "neutral",
+      "fontsize": 23,
+      "sublabel": "100,352 logits"
+    },
+    {
+      "id": "token",
+      "box": [
+        150,
+        1575,
+        310,
+        65
+      ],
+      "label": "トークン選択 → 出力",
+      "role": "neutral",
+      "fontsize": 23
+    },
+    {
+      "id": "local-h",
+      "box": [
+        720,
+        355,
+        280,
+        65
+      ],
+      "label": "h",
+      "role": "neutral",
+      "fontsize": 23
+    },
+    {
+      "id": "local-pre",
+      "box": [
+        720,
+        480,
+        280,
+        65
+      ],
+      "label": "Input RMSNorm → x",
+      "role": "neutral",
+      "fontsize": 23
+    },
+    {
+      "id": "local-e",
+      "box": [
+        1310,
+        355,
+        200,
+        80
+      ],
+      "label": "E0",
+      "role": "memory",
+      "fontsize": 23,
+      "sublabel": "scaled embedding"
+    },
+    {
+      "id": "local-blend",
+      "box": [
+        1270,
+        495,
+        240,
+        65
+      ],
+      "label": "blend(E0, x)",
+      "role": "modulation",
+      "fontsize": 23
+    },
+    {
+      "id": "local-q",
+      "box": [
+        675,
+        655,
+        200,
+        65
+      ],
+      "label": "Wq → Q · 80",
+      "role": "local",
+      "fontsize": 23
+    },
+    {
+      "id": "local-k",
+      "box": [
+        970,
+        655,
+        200,
+        65
+      ],
+      "label": "Wk → K · 8",
+      "role": "memory",
+      "fontsize": 23
+    },
+    {
+      "id": "local-v",
+      "box": [
+        1270,
+        655,
+        240,
+        65
+      ],
+      "label": "Wv → V · 8",
+      "role": "memory",
+      "fontsize": 23
+    },
+    {
+      "id": "local-qn",
+      "box": [
+        675,
+        785,
+        200,
+        65
+      ],
+      "label": "Q RMSNorm",
+      "role": "neutral",
+      "fontsize": 23
+    },
+    {
+      "id": "local-kn",
+      "box": [
+        970,
+        785,
+        200,
+        65
+      ],
+      "label": "K RMSNorm",
+      "role": "memory",
+      "fontsize": 23
+    },
+    {
+      "id": "local-qp",
+      "box": [
+        675,
+        915,
+        200,
+        65
+      ],
+      "label": "RoPE(Q)",
+      "role": "local",
+      "fontsize": 23
+    },
+    {
+      "id": "local-kp",
+      "box": [
+        970,
+        915,
+        200,
+        65
+      ],
+      "label": "RoPE(K)",
+      "role": "memory",
+      "fontsize": 23
+    },
+    {
+      "id": "local-cache",
+      "box": [
+        1270,
+        1030,
+        240,
+        85
+      ],
+      "label": "KV cache",
+      "role": "memory",
+      "fontsize": 23,
+      "sublabel": "append K, V"
+    },
+    {
+      "id": "local-gqa",
+      "box": [
+        1270,
+        1205,
+        240,
+        75
+      ],
+      "label": "KV read / GQA",
+      "role": "memory",
+      "fontsize": 23,
+      "sublabel": "8 KV → 80 Q heads"
+    },
+    {
+      "id": "local-mask",
+      "box": [
+        675,
+        1060,
+        260,
+        80
+      ],
+      "label": "Causal window",
+      "role": "local",
+      "fontsize": 23,
+      "sublabel": "≤ 1,024 tokens"
+    },
+    {
+      "id": "local-att",
+      "box": [
+        740,
+        1205,
+        360,
+        75
+      ],
+      "label": "Attention · SDPA",
+      "role": "local",
+      "fontsize": 23,
+      "emphasis": true,
+      "bold": true
+    },
+    {
+      "id": "local-gate",
+      "box": [
+        1270,
+        1375,
+        240,
+        65
+      ],
+      "label": "σ(Wg x)",
+      "role": "modulation",
+      "fontsize": 23
+    },
+    {
+      "id": "local-mul",
+      "box": [
+        890,
+        1380,
+        55,
+        55
+      ],
+      "label": "×",
+      "role": "local",
+      "fontsize": 25,
+      "shape": "circle"
+    },
+    {
+      "id": "local-o",
+      "box": [
+        740,
+        1505,
+        360,
+        65
+      ],
+      "label": "Output projection · Wo",
+      "role": "local",
+      "fontsize": 23
+    },
+    {
+      "id": "local-post",
+      "box": [
+        740,
+        1635,
+        360,
+        65
+      ],
+      "label": "Post-attention RMSNorm",
+      "role": "neutral",
+      "fontsize": 23
+    },
+    {
+      "id": "local-add1",
+      "box": [
+        890,
+        1770,
+        55,
+        55
+      ],
+      "label": "+",
+      "role": "local",
+      "fontsize": 25,
+      "shape": "circle"
+    },
+    {
+      "id": "local-ffnpre",
+      "box": [
+        740,
+        1885,
+        360,
+        65
+      ],
+      "label": "Pre-FFN RMSNorm",
+      "role": "neutral",
+      "fontsize": 23
+    },
+    {
+      "id": "local-fgate",
+      "box": [
+        660,
+        2025,
+        350,
+        85
+      ],
+      "label": "Wgate → clamp ≤ 20",
+      "role": "modulation",
+      "fontsize": 21,
+      "sublabel": "5,120 → 40,960"
+    },
+    {
+      "id": "local-fup",
+      "box": [
+        1150,
+        2025,
+        350,
+        85
+      ],
+      "label": "Wup → clamp ±20",
+      "role": "local",
+      "fontsize": 21,
+      "sublabel": "5,120 → 40,960"
+    },
+    {
+      "id": "local-silu",
+      "box": [
+        660,
+        2190,
+        350,
+        65
+      ],
+      "label": "SiLU",
+      "role": "modulation",
+      "fontsize": 23
+    },
+    {
+      "id": "local-fmul",
+      "box": [
+        1070,
+        2300,
+        55,
+        55
+      ],
+      "label": "×",
+      "role": "local",
+      "fontsize": 25,
+      "shape": "circle"
+    },
+    {
+      "id": "local-down",
+      "box": [
+        920,
+        2430,
+        350,
+        75
+      ],
+      "label": "Wdown",
+      "role": "local",
+      "fontsize": 23,
+      "sublabel": "40,960 → 5,120",
+      "emphasis": true,
+      "bold": true
+    },
+    {
+      "id": "local-ffnpost",
+      "box": [
+        920,
+        2560,
+        350,
+        65
+      ],
+      "label": "Post-FFN RMSNorm",
+      "role": "neutral",
+      "fontsize": 23
+    },
+    {
+      "id": "local-add2",
+      "box": [
+        1070,
+        2690,
+        55,
+        55
+      ],
+      "label": "+",
+      "role": "local",
+      "fontsize": 25,
+      "shape": "circle"
+    },
+    {
+      "id": "local-result",
+      "box": [
+        920,
+        2810,
+        350,
+        65
+      ],
+      "label": "h_next",
+      "role": "local",
+      "fontsize": 23
+    },
+    {
+      "id": "global-h",
+      "box": [
+        1760,
+        355,
+        280,
+        65
+      ],
+      "label": "h",
+      "role": "neutral",
+      "fontsize": 23
+    },
+    {
+      "id": "global-pre",
+      "box": [
+        1760,
+        480,
+        280,
+        65
+      ],
+      "label": "Input RMSNorm → x",
+      "role": "neutral",
+      "fontsize": 23
+    },
+    {
+      "id": "global-e",
+      "box": [
+        2350,
+        355,
+        200,
+        80
+      ],
+      "label": "E0",
+      "role": "memory",
+      "fontsize": 23,
+      "sublabel": "scaled embedding"
+    },
+    {
+      "id": "global-blend",
+      "box": [
+        2310,
+        495,
+        240,
+        65
+      ],
+      "label": "blend(E0, x)",
+      "role": "modulation",
+      "fontsize": 23
+    },
+    {
+      "id": "global-q",
+      "box": [
+        1715,
+        655,
+        200,
+        65
+      ],
+      "label": "Wq → Q · 80",
+      "role": "global",
+      "fontsize": 23
+    },
+    {
+      "id": "global-k",
+      "box": [
+        2010,
+        655,
+        200,
+        65
+      ],
+      "label": "Wk → K · 8",
+      "role": "memory",
+      "fontsize": 23
+    },
+    {
+      "id": "global-v",
+      "box": [
+        2310,
+        655,
+        240,
+        65
+      ],
+      "label": "Wv → V · 8",
+      "role": "memory",
+      "fontsize": 23
+    },
+    {
+      "id": "global-qn",
+      "box": [
+        1715,
+        785,
+        200,
+        65
+      ],
+      "label": "Q RMSNorm",
+      "role": "neutral",
+      "fontsize": 23
+    },
+    {
+      "id": "global-kn",
+      "box": [
+        2010,
+        785,
+        200,
+        65
+      ],
+      "label": "K RMSNorm",
+      "role": "memory",
+      "fontsize": 23
+    },
+    {
+      "id": "global-qp",
+      "box": [
+        1715,
+        915,
+        200,
+        65
+      ],
+      "label": "Q · NoPE",
+      "role": "global",
+      "fontsize": 23
+    },
+    {
+      "id": "global-kp",
+      "box": [
+        2010,
+        915,
+        200,
+        65
+      ],
+      "label": "K · NoPE",
+      "role": "memory",
+      "fontsize": 23
+    },
+    {
+      "id": "global-cache",
+      "box": [
+        2310,
+        1030,
+        240,
+        85
+      ],
+      "label": "KV cache",
+      "role": "memory",
+      "fontsize": 23,
+      "sublabel": "append K, V"
+    },
+    {
+      "id": "global-gqa",
+      "box": [
+        2310,
+        1205,
+        240,
+        75
+      ],
+      "label": "KV read / GQA",
+      "role": "memory",
+      "fontsize": 23,
+      "sublabel": "8 KV → 80 Q heads"
+    },
+    {
+      "id": "global-mask",
+      "box": [
+        1715,
+        1060,
+        260,
+        80
+      ],
+      "label": "Causal mask",
+      "role": "global",
+      "fontsize": 23,
+      "sublabel": "All past tokens"
+    },
+    {
+      "id": "global-att",
+      "box": [
+        1780,
+        1205,
+        360,
+        75
+      ],
+      "label": "Attention · SDPA",
+      "role": "global",
+      "fontsize": 23,
+      "emphasis": true,
+      "bold": true
+    },
+    {
+      "id": "global-gate",
+      "box": [
+        2310,
+        1375,
+        240,
+        65
+      ],
+      "label": "σ(Wg x)",
+      "role": "modulation",
+      "fontsize": 23
+    },
+    {
+      "id": "global-mul",
+      "box": [
+        1930,
+        1380,
+        55,
+        55
+      ],
+      "label": "×",
+      "role": "global",
+      "fontsize": 25,
+      "shape": "circle"
+    },
+    {
+      "id": "global-o",
+      "box": [
+        1780,
+        1505,
+        360,
+        65
+      ],
+      "label": "Output projection · Wo",
+      "role": "global",
+      "fontsize": 23
+    },
+    {
+      "id": "global-post",
+      "box": [
+        1780,
+        1635,
+        360,
+        65
+      ],
+      "label": "Post-attention RMSNorm",
+      "role": "neutral",
+      "fontsize": 23
+    },
+    {
+      "id": "global-add1",
+      "box": [
+        1930,
+        1770,
+        55,
+        55
+      ],
+      "label": "+",
+      "role": "global",
+      "fontsize": 25,
+      "shape": "circle"
+    },
+    {
+      "id": "global-ffnpre",
+      "box": [
+        1780,
+        1885,
+        360,
+        65
+      ],
+      "label": "Pre-FFN RMSNorm",
+      "role": "neutral",
+      "fontsize": 23
+    },
+    {
+      "id": "global-fgate",
+      "box": [
+        1700,
+        2025,
+        350,
+        85
+      ],
+      "label": "Wgate → clamp ≤ 20",
+      "role": "modulation",
+      "fontsize": 21,
+      "sublabel": "5,120 → 40,960"
+    },
+    {
+      "id": "global-fup",
+      "box": [
+        2190,
+        2025,
+        350,
+        85
+      ],
+      "label": "Wup → clamp ±20",
+      "role": "global",
+      "fontsize": 21,
+      "sublabel": "5,120 → 40,960"
+    },
+    {
+      "id": "global-silu",
+      "box": [
+        1700,
+        2190,
+        350,
+        65
+      ],
+      "label": "SiLU",
+      "role": "modulation",
+      "fontsize": 23
+    },
+    {
+      "id": "global-fmul",
+      "box": [
+        2110,
+        2300,
+        55,
+        55
+      ],
+      "label": "×",
+      "role": "global",
+      "fontsize": 25,
+      "shape": "circle"
+    },
+    {
+      "id": "global-down",
+      "box": [
+        1960,
+        2430,
+        350,
+        75
+      ],
+      "label": "Wdown",
+      "role": "global",
+      "fontsize": 23,
+      "sublabel": "40,960 → 5,120",
+      "emphasis": true,
+      "bold": true
+    },
+    {
+      "id": "global-ffnpost",
+      "box": [
+        1960,
+        2560,
+        350,
+        65
+      ],
+      "label": "Post-FFN RMSNorm",
+      "role": "neutral",
+      "fontsize": 23
+    },
+    {
+      "id": "global-add2",
+      "box": [
+        2110,
+        2690,
+        55,
+        55
+      ],
+      "label": "+",
+      "role": "global",
+      "fontsize": 25,
+      "shape": "circle"
+    },
+    {
+      "id": "global-result",
+      "box": [
+        1960,
+        2810,
+        350,
+        65
+      ],
+      "label": "h_next",
+      "role": "global",
+      "fontsize": 23
+    }
+  ],
+  "edges": [
+    {
+      "from": "text",
+      "to": "emb",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "muted"
+    },
+    {
+      "from": "emb",
+      "to": "layer0",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "muted"
+    },
+    {
+      "from": "layer0",
+      "to": "layer1",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "muted"
+    },
+    {
+      "from": "layer1",
+      "to": "layer2",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "muted"
+    },
+    {
+      "from": "layer2",
+      "to": "layer3",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "muted"
+    },
+    {
+      "from": "layer3",
+      "to": "layer4",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "muted"
+    },
+    {
+      "from": "layer4",
+      "to": "final",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "muted"
+    },
+    {
+      "from": "final",
+      "to": "head",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "muted"
+    },
+    {
+      "from": "head",
+      "to": "token",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "muted"
+    },
+    {
+      "from": "local-h",
+      "to": "local-pre",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "local-e",
+      "to": "local-blend",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "modulation",
+      "width": 1.3
+    },
+    {
+      "from": "local-pre",
+      "to": "local-blend",
+      "from_side": "right",
+      "to_side": "left",
+      "role": "modulation",
+      "width": 1.3
+    },
+    {
+      "from": "local-pre",
+      "to": "local-q",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "local-pre",
+      "to": "local-k",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "memory",
+      "width": 1.3
+    },
+    {
+      "from": "local-blend",
+      "to": "local-v",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "memory",
+      "width": 1.3
+    },
+    {
+      "from": "local-q",
+      "to": "local-qn",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "local-k",
+      "to": "local-kn",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "memory",
+      "width": 1.3
+    },
+    {
+      "from": "local-qn",
+      "to": "local-qp",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "local-kn",
+      "to": "local-kp",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "memory",
+      "width": 1.3
+    },
+    {
+      "from": "local-kp",
+      "to": "local-cache",
+      "from_side": "right",
+      "to_side": "left",
+      "role": "memory",
+      "width": 1.3
+    },
+    {
+      "from": "local-v",
+      "to": "local-cache",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "memory",
+      "width": 1.3
+    },
+    {
+      "from": "local-cache",
+      "to": "local-gqa",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "memory",
+      "width": 1.3
+    },
+    {
+      "from": "local-qp",
+      "to": "local-att",
+      "from_side": "left",
+      "to_side": "left",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "local-mask",
+      "to": "local-att",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "local-gqa",
+      "to": "local-att",
+      "from_side": "left",
+      "to_side": "right",
+      "role": "memory",
+      "width": 1.3
+    },
+    {
+      "from": "local-pre",
+      "to": "local-gate",
+      "from_side": "right",
+      "to_side": "right",
+      "role": "modulation",
+      "width": 1.3
+    },
+    {
+      "from": "local-att",
+      "to": "local-mul",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "local-gate",
+      "to": "local-mul",
+      "from_side": "left",
+      "to_side": "right",
+      "role": "modulation",
+      "width": 1.3
+    },
+    {
+      "from": "local-mul",
+      "to": "local-o",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "local-o",
+      "to": "local-post",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "local-post",
+      "to": "local-add1",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "local-h",
+      "to": "local-add1",
+      "from_side": "left",
+      "to_side": "left",
+      "role": "muted",
+      "dashed": true,
+      "width": 1.05
+    },
+    {
+      "from": "local-add1",
+      "to": "local-ffnpre",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "local-ffnpre",
+      "to": "local-fgate",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "modulation",
+      "width": 1.3
+    },
+    {
+      "from": "local-ffnpre",
+      "to": "local-fup",
+      "from_side": "right",
+      "to_side": "top",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "local-fgate",
+      "to": "local-silu",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "modulation",
+      "width": 1.3
+    },
+    {
+      "from": "local-silu",
+      "to": "local-fmul",
+      "from_side": "bottom",
+      "to_side": "left",
+      "role": "modulation",
+      "width": 1.3
+    },
+    {
+      "from": "local-fup",
+      "to": "local-fmul",
+      "from_side": "bottom",
+      "to_side": "right",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "local-fmul",
+      "to": "local-down",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "local-down",
+      "to": "local-ffnpost",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "local-ffnpost",
+      "to": "local-add2",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "local-add1",
+      "to": "local-add2",
+      "from_side": "left",
+      "to_side": "left",
+      "role": "muted",
+      "dashed": true,
+      "width": 1.05
+    },
+    {
+      "from": "local-add2",
+      "to": "local-result",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "local",
+      "width": 1.7
+    },
+    {
+      "from": "global-h",
+      "to": "global-pre",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "global",
+      "width": 1.7
+    },
+    {
+      "from": "global-e",
+      "to": "global-blend",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "modulation",
+      "width": 1.3
+    },
+    {
+      "from": "global-pre",
+      "to": "global-blend",
+      "from_side": "right",
+      "to_side": "left",
+      "role": "modulation",
+      "width": 1.3
+    },
+    {
+      "from": "global-pre",
+      "to": "global-q",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "global",
+      "width": 1.7
+    },
+    {
+      "from": "global-pre",
+      "to": "global-k",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "memory",
+      "width": 1.3
+    },
+    {
+      "from": "global-blend",
+      "to": "global-v",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "memory",
+      "width": 1.3
+    },
+    {
+      "from": "global-q",
+      "to": "global-qn",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "global",
+      "width": 1.7
+    },
+    {
+      "from": "global-k",
+      "to": "global-kn",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "memory",
+      "width": 1.3
+    },
+    {
+      "from": "global-qn",
+      "to": "global-qp",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "global",
+      "width": 1.7
+    },
+    {
+      "from": "global-kn",
+      "to": "global-kp",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "memory",
+      "width": 1.3
+    },
+    {
+      "from": "global-kp",
+      "to": "global-cache",
+      "from_side": "right",
+      "to_side": "left",
+      "role": "memory",
+      "width": 1.3
+    },
+    {
+      "from": "global-v",
+      "to": "global-cache",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "memory",
+      "width": 1.3
+    },
+    {
+      "from": "global-cache",
+      "to": "global-gqa",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "memory",
+      "width": 1.3
+    },
+    {
+      "from": "global-qp",
+      "to": "global-att",
+      "from_side": "left",
+      "to_side": "left",
+      "role": "global",
+      "width": 1.7
+    },
+    {
+      "from": "global-mask",
+      "to": "global-att",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "global",
+      "width": 1.7
+    },
+    {
+      "from": "global-gqa",
+      "to": "global-att",
+      "from_side": "left",
+      "to_side": "right",
+      "role": "memory",
+      "width": 1.3
+    },
+    {
+      "from": "global-pre",
+      "to": "global-gate",
+      "from_side": "right",
+      "to_side": "right",
+      "role": "modulation",
+      "width": 1.3
+    },
+    {
+      "from": "global-att",
+      "to": "global-mul",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "global",
+      "width": 1.7
+    },
+    {
+      "from": "global-gate",
+      "to": "global-mul",
+      "from_side": "left",
+      "to_side": "right",
+      "role": "modulation",
+      "width": 1.3
+    },
+    {
+      "from": "global-mul",
+      "to": "global-o",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "global",
+      "width": 1.7
+    },
+    {
+      "from": "global-o",
+      "to": "global-post",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "global",
+      "width": 1.7
+    },
+    {
+      "from": "global-post",
+      "to": "global-add1",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "global",
+      "width": 1.7
+    },
+    {
+      "from": "global-h",
+      "to": "global-add1",
+      "from_side": "left",
+      "to_side": "left",
+      "role": "muted",
+      "dashed": true,
+      "width": 1.05
+    },
+    {
+      "from": "global-add1",
+      "to": "global-ffnpre",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "global",
+      "width": 1.7
+    },
+    {
+      "from": "global-ffnpre",
+      "to": "global-fgate",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "modulation",
+      "width": 1.3
+    },
+    {
+      "from": "global-ffnpre",
+      "to": "global-fup",
+      "from_side": "right",
+      "to_side": "top",
+      "role": "global",
+      "width": 1.7
+    },
+    {
+      "from": "global-fgate",
+      "to": "global-silu",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "modulation",
+      "width": 1.3
+    },
+    {
+      "from": "global-silu",
+      "to": "global-fmul",
+      "from_side": "bottom",
+      "to_side": "left",
+      "role": "modulation",
+      "width": 1.3
+    },
+    {
+      "from": "global-fup",
+      "to": "global-fmul",
+      "from_side": "bottom",
+      "to_side": "right",
+      "role": "global",
+      "width": 1.7
+    },
+    {
+      "from": "global-fmul",
+      "to": "global-down",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "global",
+      "width": 1.7
+    },
+    {
+      "from": "global-down",
+      "to": "global-ffnpost",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "global",
+      "width": 1.7
+    },
+    {
+      "from": "global-ffnpost",
+      "to": "global-add2",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "global",
+      "width": 1.7
+    },
+    {
+      "from": "global-add1",
+      "to": "global-add2",
+      "from_side": "left",
+      "to_side": "left",
+      "role": "muted",
+      "dashed": true,
+      "width": 1.05
+    },
+    {
+      "from": "global-add2",
+      "to": "global-result",
+      "from_side": "bottom",
+      "to_side": "top",
+      "role": "global",
+      "width": 1.7
+    }
+  ],
+  "captions": [
+    {
+      "x": 1360.0,
+      "y": 48,
+      "text": "Ripple-65B Preview",
+      "size": 42,
+      "color": "global",
+      "bold": true
+    },
+    {
+      "x": 1360.0,
+      "y": 100,
+      "text": "65B Dense Transformer · LARGE",
+      "size": 25,
+      "color": "text",
+      "bold": false
+    },
+    {
+      "x": 82,
+      "y": 530,
+      "text": "80層",
+      "size": 19,
+      "color": "muted",
+      "bold": false
+    },
+    {
+      "x": 416,
+      "y": 1150,
+      "text": "×16",
+      "size": 31,
+      "color": "text",
+      "bold": true
+    },
+    {
+      "x": 305,
+      "y": 1740,
+      "text": "64 Local + 16 Global",
+      "size": 21,
+      "color": "muted",
+      "bold": false
+    },
+    {
+      "x": 305,
+      "y": 1790,
+      "text": "d_model 5,120",
+      "size": 22,
+      "color": "muted",
+      "bold": false
+    },
+    {
+      "x": 305,
+      "y": 1830,
+      "text": "各層で独立した重み",
+      "size": 20,
+      "color": "muted",
+      "bold": false
+    },
+    {
+      "x": 1100.0,
+      "y": 255,
+      "text": "局所注意 · 64層",
+      "size": 30,
+      "color": "local",
+      "bold": true
+    },
+    {
+      "x": 1100.0,
+      "y": 295,
+      "text": "層番号で固定",
+      "size": 18,
+      "color": "muted",
+      "bold": false
+    },
+    {
+      "x": 2140.0,
+      "y": 255,
+      "text": "全域注意 · 16層",
+      "size": 30,
+      "color": "global",
+      "bold": true
+    },
+    {
+      "x": 2140.0,
+      "y": 295,
+      "text": "層番号で固定",
+      "size": 18,
+      "color": "muted",
+      "bold": false
+    },
+    {
+      "x": 1100,
+      "y": 347,
+      "text": "01   Q / K / V",
+      "size": 20,
+      "color": "muted",
+      "bold": true
+    },
+    {
+      "x": 1100,
+      "y": 1032,
+      "text": "02   Attention",
+      "size": 20,
+      "color": "muted",
+      "bold": true
+    },
+    {
+      "x": 1100,
+      "y": 1877,
+      "text": "03   FFN",
+      "size": 20,
+      "color": "muted",
+      "bold": true
+    },
+    {
+      "x": 2140,
+      "y": 347,
+      "text": "01   Q / K / V",
+      "size": 20,
+      "color": "muted",
+      "bold": true
+    },
+    {
+      "x": 2140,
+      "y": 1032,
+      "text": "02   Attention",
+      "size": 20,
+      "color": "muted",
+      "bold": true
+    },
+    {
+      "x": 2140,
+      "y": 1877,
+      "text": "03   FFN",
+      "size": 20,
+      "color": "muted",
+      "bold": true
+    },
+    {
+      "x": 305,
+      "y": 1960,
+      "text": "線と色の読み方",
+      "size": 22,
+      "color": "text",
+      "bold": true
+    },
+    {
+      "x": 240,
+      "y": 2035,
+      "text": "主経路",
+      "size": 20,
+      "color": "muted",
+      "ha": "left"
+    },
+    {
+      "x": 240,
+      "y": 2110,
+      "text": "KV・データ",
+      "size": 20,
+      "color": "muted",
+      "ha": "left"
+    },
+    {
+      "x": 240,
+      "y": 2185,
+      "text": "ゲート・混合",
+      "size": 20,
+      "color": "muted",
+      "ha": "left"
+    },
+    {
+      "x": 240,
+      "y": 2260,
+      "text": "残差接続",
+      "size": 20,
+      "color": "muted",
+      "ha": "left"
+    }
+  ],
+  "frames": [
+    {
+      "box": [
+        140,
+        490,
+        330,
+        690
+      ],
+      "role": "frame"
+    },
+    {
+      "box": [
+        65,
+        575.0,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        581.6,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        588.2,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        594.8,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        601.4,
+        34,
+        4.3
+      ],
+      "role": "global",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        608.0,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        614.6,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        621.2,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        627.8,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        634.4,
+        34,
+        4.3
+      ],
+      "role": "global",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        641.0,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        647.6,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        654.2,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        660.8,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        667.4,
+        34,
+        4.3
+      ],
+      "role": "global",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        674.0,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        680.6,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        687.2,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        693.8,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        700.4,
+        34,
+        4.3
+      ],
+      "role": "global",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        707.0,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        713.6,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        720.2,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        726.8,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        733.4,
+        34,
+        4.3
+      ],
+      "role": "global",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        740.0,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        746.6,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        753.2,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        759.8,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        766.4,
+        34,
+        4.3
+      ],
+      "role": "global",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        773.0,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        779.6,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        786.2,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        792.8,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        799.4,
+        34,
+        4.3
+      ],
+      "role": "global",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        806.0,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        812.6,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        819.2,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        825.8,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        832.4,
+        34,
+        4.3
+      ],
+      "role": "global",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        839.0,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        845.5999999999999,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        852.2,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        858.8,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        865.4,
+        34,
+        4.3
+      ],
+      "role": "global",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        872.0,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        878.5999999999999,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        885.2,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        891.8,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        898.4,
+        34,
+        4.3
+      ],
+      "role": "global",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        905.0,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        911.5999999999999,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        918.2,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        924.8,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        931.4,
+        34,
+        4.3
+      ],
+      "role": "global",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        938.0,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        944.5999999999999,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        951.2,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        957.8,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        964.4,
+        34,
+        4.3
+      ],
+      "role": "global",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        971.0,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        977.5999999999999,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        984.2,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        990.8,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        997.4,
+        34,
+        4.3
+      ],
+      "role": "global",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        1004.0,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        1010.5999999999999,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        1017.2,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        1023.8,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        1030.4,
+        34,
+        4.3
+      ],
+      "role": "global",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        1037.0,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        1043.6,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        1050.2,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        1056.8,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        1063.4,
+        34,
+        4.3
+      ],
+      "role": "global",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        1070.0,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        1076.6,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        1083.2,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        1089.8,
+        34,
+        4.3
+      ],
+      "role": "line",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        65,
+        1096.4,
+        34,
+        4.3
+      ],
+      "role": "global",
+      "radius": 0,
+      "filled": true
+    },
+    {
+      "box": [
+        620,
+        215,
+        960,
+        2715
+      ],
+      "role": "local"
+    },
+    {
+      "box": [
+        1660,
+        215,
+        960,
+        2715
+      ],
+      "role": "global"
+    },
+    {
+      "box": [
+        638,
+        325,
+        924,
+        675
+      ],
+      "role": "frame",
+      "fill": "base",
+      "fill_alpha": 0.45
+    },
+    {
+      "box": [
+        638,
+        1010,
+        924,
+        830
+      ],
+      "role": "frame",
+      "fill": "base",
+      "fill_alpha": 0.45
+    },
+    {
+      "box": [
+        638,
+        1855,
+        924,
+        1040
+      ],
+      "role": "frame",
+      "fill": "base",
+      "fill_alpha": 0.45
+    },
+    {
+      "box": [
+        1678,
+        325,
+        924,
+        675
+      ],
+      "role": "frame",
+      "fill": "base",
+      "fill_alpha": 0.45
+    },
+    {
+      "box": [
+        1678,
+        1010,
+        924,
+        830
+      ],
+      "role": "frame",
+      "fill": "base",
+      "fill_alpha": 0.45
+    },
+    {
+      "box": [
+        1678,
+        1855,
+        924,
+        1040
+      ],
+      "role": "frame",
+      "fill": "base",
+      "fill_alpha": 0.45
+    }
+  ],
+  "lines": [
+    {
+      "points": [
+        [
+          60,
+          145
+        ],
+        [
+          2660,
+          145
+        ]
+      ]
+    },
+    {
+      "points": [
+        [
+          150,
+          2035
+        ],
+        [
+          179,
+          2035
+        ]
+      ],
+      "role": "local",
+      "dashed": false,
+      "width": 1.7
+    },
+    {
+      "points": [
+        [
+          150,
+          2110
+        ],
+        [
+          215,
+          2110
+        ]
+      ],
+      "role": "memory",
+      "dashed": false,
+      "width": 1.7
+    },
+    {
+      "points": [
+        [
+          150,
+          2185
+        ],
+        [
+          215,
+          2185
+        ]
+      ],
+      "role": "modulation",
+      "dashed": false,
+      "width": 1.7
+    },
+    {
+      "points": [
+        [
+          150,
+          2260
+        ],
+        [
+          215,
+          2260
+        ]
+      ],
+      "role": "muted",
+      "dashed": true,
+      "width": 1.7
+    },
+    {
+      "points": [
+        [
+          186,
+          2035
+        ],
+        [
+          215,
+          2035
+        ]
+      ],
+      "role": "global",
+      "width": 1.7
+    }
+  ],
+  "level": "large",
+  "language": "ja",
+  "revision": "e27e171792f303d74c048184e8259ba663cfa0d5",
+  "color_roles": {
+    "primary": "local/global",
+    "KV": "memory",
+    "gate_or_blend": "modulation",
+    "residual": "muted+dashed"
+  }
+}
